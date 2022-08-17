@@ -1,0 +1,339 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: Raleway, sans-serif;
+    position: relative;
+}
+
+body{
+    min-height: 100vh;
+    width: 100%;
+}
+
+.bkg{
+    position: absolute;
+    top: 0;
+    right: -20vw;
+    z-index: -1;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90vw;
+    margin: 2rem 5rem;
+    @include flex(space-between, center, row);
+    background: white;
+    box-shadow: 0rem 0.4rem 2rem hsl(0, 0, 0, 20%);
+    border-radius: 10rem;
+    padding: 1rem 6rem;
+    z-index: 1;
+}
+
+header .logo{
+    position: relative;
+    @include flex(center,center,row);
+    .logo-img{
+        margin-right: 1.5rem;
+    }
+}
+header .nav-links{
+    position: relative;
+    @include flex(center, center, row);
+    margin: 0 3rem 0 3rem;
+    .links{
+        position: relative;
+        text-decoration: none;
+        color: black;
+        margin: 0 1.5rem;
+        font-weight: 400;
+    }
+    .links:hover{
+        color: #BFBFBF;
+        transition: 0.2s ease;
+    }
+}
+
+.container-text{
+    width: 60%;
+    height: 100%;
+    @include flex(left,center,column);
+    margin-left: 8rem;
+    margin-top: 20rem
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    button{
+        width: 20vw;
+        margin-left: 5rem;
+        margin-top: 2rem;
+    }
+}
+
+.left h2{
+    color: $orange;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+.left .extra-bold {
+font-weight: 800;
+margin-bottom: 6rem;
+}
+.select-box{
+    display: flex;
+    width: 40rem;
+    flex-direction: column;
+}
+.select-box .options-container{
+    background: white;
+    box-shadow: $box-shadow;
+    color: rgb(97, 97, 97);
+    max-height: 0; 
+    width: 100%;
+    opacity: 0; 
+    transition: all 0.4s;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    order: 1;
+}
+.selected{
+    background-color: white;
+    border: none;
+    box-shadow: $box-shadow;
+    border-radius: 100px;
+    margin-bottom: 8px;
+    color: #BFBFBF;
+    position: relative;
+    order: 0;
+}
+.selected::after{
+    content: "";
+    background: url(/img/Vector.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 80%;
+    width: 20px;
+    right: 20px;
+    top: 15px;
+    transition: all 0.4s;
+}
+.select-box .options-container.active + .selected::after{
+    transform: rotateX(180deg);
+    top: -8px;
+}
+
+.select-box .options-container.active {
+    max-height: 240px;
+    opacity: 1;
+}
+
+
+.select-box .option, .selected{
+    padding: 1.2rem 2.4rem;
+    cursor: pointer;
+    font-size: 1.8rem;
+}
+
+.select-box .option:hover {
+    background: hsl(177, 28%, 52%, 20%);
+}
+
+.select-box label{
+    cursor: pointer;
+    font-size: 1.8rem;
+    width: 100%;
+    @include flex(center,center,column);
+}
+
+.select-box .option .radio{
+    display: none;
+}
+.dirección{
+    background-color: white;
+    border: none;
+    box-shadow: $box-shadow;
+    border-radius: 100px;
+    width: 40rem;
+    margin: 2rem 0;
+    padding: 1.2rem 2.4rem;
+    color:  #BFBFBF;
+    position: relative;
+    font-size: 1.8rem;
+    font-weight: 300;  
+    display: flex;
+    flex-direction: row;
+}
+input.dirección::-webkit-input-placeholder{
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: #BFBFBF;
+    border: none;
+}
+
+
+/* Register Popup*/
+
+.bg-popup{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    @include flex(center,center,column);
+    display: none;
+}
+
+.popup-content{
+    position: relative;
+    width: auto;
+    height: auto;
+    background-color: white;
+    border-radius: 5rem;
+    color: $blue;
+    @include flex(center,center,column);
+    .close{
+        position: absolute;
+        top: 0;
+        left: 90%;
+        font-size: 8rem;
+        transform: rotate(45deg);
+        color: black;
+        font-weight: 300;
+        cursor: pointer;
+    }
+    h3{
+        margin: 5rem 18rem;
+    }
+    input{
+        margin-bottom: 5rem;
+        width: 70%;
+    }
+    h4{
+        color: $blue;
+        font-weight: 400;
+        margin: 2rem 1rem 5rem 1rem;
+        a{
+            margin-left: 1rem;
+        }
+    }
+}
+.btn{
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 0.2rem;
+}
+.btn:hover{
+    color: $blue;
+}
+
+/*3boxes*/
+.wrapper{
+    @include flex(center,center,row);
+    width: 90%;
+    margin: 20rem 2rem;
+}
+.box{
+    @include flex(center,center,column);
+    width: 90%;
+    line-height: 3rem;
+    color: #4C4C4C;
+    img{
+        margin-bottom: 2rem;
+    }
+    h3{
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    
+    h4{
+      font-weight: 400;
+      color: $grey-text;
+      text-align: center;
+    }
+}
+
+/*Overview "sobre nosotros"*/
+.sobre-nosotros{
+    @include flex(center,center,row);
+    width: 90%;
+    margin: auto 2rem;
+    img{
+        width: 50%;
+        margin-right: 3rem;
+        height: 100%;
+    }
+}
+.text-right{
+    width: 40%;
+    margin-left: 3rem;
+    h3{
+        font-weight: 600;
+        color: $blue;
+    }
+    h4{
+        margin-top: 2.5rem;
+        line-height: 3.5rem;
+        font-weight: 400;
+        color: $grey-text;
+    }
+    .center{
+        margin-top: 4rem;
+        @include flex(center,center,column);
+    }
+}
+
+/*footer*/
+.footer{
+    @include flex(center,center,row);
+    background: #3F3F3F;
+    width: 100%;
+    margin-top: 14rem;
+    img{
+        margin: 2rem 10rem;
+    }
+    .text{
+        width: 70%;
+        @include flex(top,left,column);
+        margin: 0 auto;
+        h4{
+            color: white;
+            font-weight: 500;
+            font-size: 2rem;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            font-weight: 200;
+            font-size: 1.5rem;
+        }
+        .numero{
+            color: $orange;
+        }
+    }
+    .socials{
+        @include flex(center,left,column);
+        margin-right: 10rem;
+        h4{
+            color: white;
+            font-weight: 500;
+            font-size: 2rem;
+        }
+        ul{
+            @include flex(left,left,row);
+        }
+        img{
+            margin: 1rem;
+        }
+    }
+}
+

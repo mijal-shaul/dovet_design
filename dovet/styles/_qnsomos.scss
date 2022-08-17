@@ -1,0 +1,41 @@
+.grey{
+    position: relative;
+    text-decoration: none;
+    color: #BFBFBF;
+    margin: 0 1.5rem;
+    font-weight: 400;
+}
+.relative{
+    position: relative;
+}
+
+.background{
+    @include flex(center,left,column);
+    box-shadow: $box-shadow;
+    margin: 1rem 0 4rem 0;
+    height: auto;
+    padding: 4rem 0;
+    .contenido{
+        width: 90%;
+        margin: auto;
+        justify-content: center;
+    }
+    .paragraph{
+        @include flex(center,left,row);
+        line-height: $line-height;
+        img{
+            margin-right: 2rem;
+        }
+    }
+    h3{
+        font-weight: 700;
+        color: $orange;
+    }
+}
+.paragraphs{
+    @include flex(space-between,left,column);
+    p{
+        margin: auto;
+    }
+}
+

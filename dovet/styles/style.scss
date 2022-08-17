@@ -1,0 +1,23 @@
+$header1: 5rem;
+$header2: 8rem;
+$header3: 6rem;
+$header4: 2rem;
+$text: 2.5rem;
+$blue: #61A7A3;
+$orange: #FFB444;
+$grey-text: #7F7F7F;
+$box-shadow: 0rem 0.4rem 2rem hsl(0, 0, 0, 20%);
+$line-height: 3.5rem;
+@mixin flex($justify, $align, $direction){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+@import "global";
+@import "homepage";
+@import "qnsomos";
+@import "trabaja";
+@import "contacto";
+@import "registrarse";

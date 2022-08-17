@@ -1,0 +1,33 @@
+.trabaja{
+    box-shadow: $box-shadow;
+    margin: 6rem 0;
+    height: auto;
+    padding: 4rem 0;
+    p{
+        text-align: left;
+        margin-bottom: 3.5rem;
+    }
+}
+.div-one{
+    margin-right: 10rem;
+    text-align: right;
+    color: $orange;
+    img{
+        margin-left: 4rem;
+    }
+    h2{
+        width: 55rem;
+    }
+}
+.adjuntar{
+    align-items: center;
+    img{
+        margin-right: 1rem;
+    }
+}
+
+.div-two{
+    position: relative;
+    justify-content: center;
+}
+

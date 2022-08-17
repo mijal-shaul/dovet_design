@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html{
+    font-size: 62.5%;
+    font-family: 'Raleway', sans-serif;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: white;
+    overflow-x: hidden;
+}
+p{
+    font-size: $text;
+    font-weight: 400;
+    color: $grey-text;
+}
+
+h1{
+    font-size: $header1;
+}
+
+li,button,label,input,p,a{
+    font-size: $text;
+}
+
+h2{
+    font-size: $header2;
+}
+
+h3{
+    font-size: $header3;
+}
+
+h4{
+    font-size: $header4;
+}
+
+
+ul{
+    list-style: none;
+}
+
+.links{
+    color: #427370;
+    font-size: 2rem;
+ }
+
+a{
+    font-size: 2rem;
+    color: #427370;
+    font-weight: 400;
+}
+a:hover{
+    color: $blue;
+}
+button{
+    border-radius: 10rem;
+    background-color: $blue;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border: solid $blue 0.2rem;
+}
+button:hover{
+    background-color: white;
+    color: $blue;
+    border: solid $blue 0.2rem;
+}
+
+.auto{
+    width: 90%;
+    margin: auto;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.btn-outline{
+    border: solid #427370 0.5rem;
+    background-color: white;
+    color: #427370;
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+    cursor: pointer;
+    a{
+        text-decoration: none;
+    }
+}
+.btn-outline:hover{
+    border: solid #427370 0.5rem;
+    background-color: #427370;
+    a{
+        color: white;
+    }
+}
